@@ -3,23 +3,24 @@ const title = "navegador de la web"
 
 ---
 
-<nav>
+    <nav class="navbar">
 
-    <ul class="indice">
-        <li><a href="http://localhost:4321/">&lt; /&gt; </a></li>
-        <li><a href="#proyectos">Proyectos</a></li>
-        <li><a href="#">About me</a></li>
-        <li><a href="#">Skills</a></li>
-        <li><a href="#">Contacto</a></li>
-    </ul>
+        <ul class="indice">
+            <li><a href="http://localhost:4321/" aria-label="enlace al incio">&lt; /&gt; </a></li>
+            <li><a href="#proyectos" >Proyectos</a></li>
+            <li><a href="#" >About me</a></li>
+            <li><a href="#" >Skills</a></li>
+            <li><a href="#" >Contacto</a></li>
+        </ul>
 
-</nav>
+    </nav>
 
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Patrick+Hand&display=swap');
     
-    nav{
+    
+    .navbar{
         background-color: #EEEEEE;
         height: 4rem;
         width: 70rem;
@@ -30,26 +31,30 @@ const title = "navegador de la web"
         margin: 1rem;
         border-radius: 25px;
         padding: 5px 10px;
+        
        
     }
     
-    nav ul{
+    .indice{
         list-style-type: none;
         margin: 0;
         padding: 0;
         display: flex;
     }
-    nav ul li {
+    li {
         margin: 0 5rem 0 5rem;
         
     }
-    nav ul li a {
+    .indice a {
         color: #000000;
         text-decoration: none;
         font-family:"Patrick Hand", serif;
         font-size: 23px;
         
     }
+    
+    
+
 
 
 
