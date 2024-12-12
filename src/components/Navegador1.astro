@@ -1,38 +1,44 @@
 ---
-const title = "navegador de la web"
-
+const title="navegador de la web"
+import menuIcon from '../assets/menuIcon.svg';
 ---
 
-    <nav class="navbar">
 
-        <ul class="indice">
-            <li><a href="http://localhost:4321/" aria-label="enlace al incio">&lt; /&gt; </a></li>
-            <li><a href="#proyectos" >Proyectos</a></li>
-            <li><a href="#" >About me</a></li>
-            <li><a href="#" >Skills</a></li>
-            <li><a href="#" >Contacto</a></li>
-        </ul>
 
-    </nav>
+<nav class="navbar">
+
+	<ul class="indice">    <!-- falta hacer el redireccionamiento bien de los href, ademas faltaria un span para poder poner luego algo en el naavbar responsive mobile-->
+		<li><a href="http://localhost:4321/" aria-label="enlace al incio" id="link1">&lt; /&gt; </a></li>
+		<li><a href="./proyectos.astro" >Proyectos</a></li>
+		<li><a href="./aboutSection" >About me</a></li>
+		<li><a href="#" >Skills</a></li>
+		<li><a href="#" >Contacto</a></li>
+	</ul>
+    <button class="menu-icon">
+        <img src={menuIcon.src} alt="Menu">
+    </button>
+
+</nav>
+
+
 
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Patrick+Hand&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
     
     
     .navbar{
-        background-color: #EEEEEE;
-        height: 4rem;
-        width: 70rem;
+        background-color: #e2e1e1;
+        height: 3rem;
+        min-width: 35%;
         position: fixed;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 1rem;
+        margin: 1rem auto;
         border-radius: 25px;
         padding: 5px 10px;
-        
-       
     }
     
     .indice{
@@ -40,27 +46,80 @@ const title = "navegador de la web"
         margin: 0;
         padding: 0;
         display: flex;
+        
+        
     }
     li {
-        margin: 0 5rem 0 5rem;
+        margin: 0 2.5rem;
         
     }
     .indice a {
         color: #000000;
         text-decoration: none;
-        font-family:"Patrick Hand", serif;
-        font-size: 23px;
-        
+        /*font-family: "Patrick hand", sans-serif; tipografia estilo escritura*/
+        font-family:"Inter", bold;
+        font-size: 18px;
+       
+    }
+
+    .indice li:hover a{
+        color: #8a8484;
     }
     
     
+    
+    /*#554d4d4f  color para sombra en gris*/ 
+    .indice li:focus-within a,
+    .indice li.active a {
+        color: #2799B2;
+        text-shadow: -2px 3px 10px #2799b27c;
+    }
+
+    .menu-icon{
+        display: none;
+        background-size: contain;
+        border: none;
+        cursor: pointer;
+        background-color: transparent;
+        
+    }
+    img{
+        size: 100%;
+    }
 
 
+    /*navbar responsive incompleto, falta acomodar y poner el logo menu a la derecha y un sppan q diga agustin a la izquierda. tambien falta la animacion de despliegue de menu */
+    @media only screen and (max-width: 860px){
+        .navbar{
+            width: 60%;
+        }
 
+        .menu-icon{
+            display: block;
+            width: 50px;
+            
+        }
+        .indice {
+            display: none;
+        }
+    }
 
+    
+    
 
-
+    
 
 
 
 </style>
+
+<script> //script para manejar el active y focus de la navbar
+    const items = document.querySelectorAll('.indice li');
+
+items.forEach((item) => {
+    item.addEventListener('click', () => {
+        items.forEach((el) => el.classList.remove('active'));
+        item.classList.add('active');
+    });
+});
+</script>
