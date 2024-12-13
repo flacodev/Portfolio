@@ -1,6 +1,7 @@
 ---
 const title="navegador de la web"
 import menuIcon from '../assets/menuIcon.svg';
+
 ---
 
 
@@ -14,10 +15,12 @@ import menuIcon from '../assets/menuIcon.svg';
 		<li><a href="#" >Skills</a></li>
 		<li><a href="#" >Contacto</a></li>
 	</ul>
-    <button class="menu-icon">
-        <img src={menuIcon.src} alt="Menu">
-    </button>
-
+        <div class="responsive-container-div">
+            <a href="http://localhost:4321/" id="inicio-responsive">Agustin</a>
+            <button class="menu-icon" id="btn">
+                <img src={menuIcon.src} alt="Menu">
+            </button>
+        </div>
 </nav>
 
 
@@ -53,7 +56,7 @@ import menuIcon from '../assets/menuIcon.svg';
         margin: 0 2.5rem;
         
     }
-    .indice a {
+     a {
         color: #000000;
         text-decoration: none;
         /*font-family: "Patrick hand", sans-serif; tipografia estilo escritura*/
@@ -83,35 +86,99 @@ import menuIcon from '../assets/menuIcon.svg';
         background-color: transparent;
         
     }
-    img{
-        size: 100%;
+    .menu-icon{
+        width: 100%;
+        height: auto;
+    }
+    .responsive-container-div{
+        display: none;
+        justify-content: space-between;
+        
+        width: 100%;
+    }
+    #inicio-responsive{
+        padding: 0;
+        display:flex;
+        align-items: center;
+        display: none;
+    }
+
+    .menu-icon{
+        width: 50px;
+        display: none;
+        
+    }
+    
+    .dropdown-menu{
+        display: none;
     }
 
 
     /*navbar responsive incompleto, falta acomodar y poner el logo menu a la derecha y un sppan q diga agustin a la izquierda. tambien falta la animacion de despliegue de menu */
     @media only screen and (max-width: 860px){
-        .navbar{
-            width: 60%;
-        }
-
+        
         .menu-icon{
             display: block;
             width: 50px;
+            cursor: pointer;
+        }
+        
+        .indice{
+            position: absolute;
+            z-index: -1000;
+            top: 30px;
+            left: 0;
+            right: 0;
+            height: 270px;
+            width: 100%;
+            background: #e2e1e1;
+            display: block;
+            text-align: center;
+            overflow: hidden;
+            border-radius: 0 0 25px 25px;
+            max-height: 0;
+            transition: max-height 0.3s ease-in-out;
             
         }
-        .indice {
+        li{
+            margin: 30px;
+        }
+        li:first-child{
             display: none;
         }
+        
+        li:nth-child(2){
+            margin-top: 50px;
+        }
+
+        .responsive-container-div{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 20px;
+            
+        }
+
+        #inicio-responsive{
+            padding: 0;
+            display:flex;
+            
+        }
+        .navbar{
+            width: 60%;
+            
+        }
+        .indice.hidden{
+            max-height:0 ;
+        }
+        .indice.active{
+            max-height: 270px;
+        }
+      
     }
 
-    
-    
-
-    
-
-
-
 </style>
+
 
 <script> //script para manejar el active y focus de la navbar
     const items = document.querySelectorAll('.indice li');
@@ -122,4 +189,26 @@ items.forEach((item) => {
         item.classList.add('active');
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const menuIcono = document.querySelector('.menu-icon'); // Botón del menú hamburguesa
+    const navbar = document.querySelector('.indice'); // Contenedor de los elementos del menú
+
+    // Asegúrate de que el botón del menú y el navbar existen
+    if (menuIcono && navbar) {
+        // Inicialmente el menú está oculto
+        navbar.classList.add('hidden');
+        
+        // Maneja el click en el ícono del menú usando addEventListener
+        menuIcono.addEventListener('click', function () {
+            // Alterna la clase 'active' para mostrar/ocultar el menú con animación
+            navbar.classList.toggle('active');
+        });
+    } else {
+        console.error('No se pudo encontrar el botón del menú o el contenedor del menú');
+    }
+});
+
+
+
 </script>
