@@ -4,6 +4,7 @@ import Navegador1 from '../components/Navegador1.astro';
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 import ProyectosSection from '../sections/proyectosSection.astro';
+import Home from '../components/home.astro';
 
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -12,7 +13,9 @@ import ProyectosSection from '../sections/proyectosSection.astro';
 
 
 
-<Layout>
+<Layout title="Portfolio web">
 	<Navegador1 ></Navegador1>
-	<ProyectosSection ></ProyectosSection>
+	<main>
+		<Home ></Home>
+	</main>
 </Layout>
