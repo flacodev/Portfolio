@@ -1,14 +1,16 @@
 ---
 
 import Navegador1 from '../components/Navegador1.astro';
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-import ProyectosSection from '../sections/proyectosSection.astro';
-import Home from '../components/home.astro';
+import ProyectosSection from '../components/sections/proyectosSection.astro';
+import Home from '../components/sections/home.astro';
+import AboutSection from '../components/sections/aboutSection.astro';
+import ContactoSection from '../components/sections/contactoSection.astro';
+import SkillsSection from '../components/sections/skillsSection.astro';
 
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+
+
 ---
 
 
@@ -17,5 +19,21 @@ import Home from '../components/home.astro';
 	<Navegador1 ></Navegador1>
 	<main>
 		<Home ></Home>
+		<AboutSection></AboutSection>
+		<ContactoSection></ContactoSection>
+		<SkillsSection></SkillsSection>
+		<ProyectosSection></ProyectosSection>
 	</main>
 </Layout>
+
+
+
+<style>
+	main{
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		height: 100%;
+	}
+	
+</style>

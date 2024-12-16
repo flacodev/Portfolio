@@ -1,0 +1,166 @@
+---
+const title="Home page"
+import imgPrincipal from '../assets/imgPrincipal.jpg';
+ 
+---
+
+<section id="home-section">
+    <div class="hero">
+        <div class="h1-name">
+            <h1>
+                <span>&lt;</span>
+                    Agustin Sanchez
+                <span>/&gt;</span>
+            </h1>
+            <div class="leyend">
+                <h2>Diseñando soluciones.</h2>
+            </div>
+        </div>
+        <div class="img-container">
+            <div class="img">
+                <img src={imgPrincipal.src} alt="Agustin Sanchez">
+            </div>
+            <div class="cv-btn">
+                <button>Resume</button>    
+            </div>
+        </div>
+    </div>
+</section>
+    
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Patrick+Hand&display=swap');
+
+    section{
+    height: 100vh; /* Cada sección ocupa al menos el alto de la ventana */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border-bottom: 1px solid #ddd; /* Línea divisoria opcional */
+        
+    }
+    
+
+    .h1-name span{
+        color: #44CECE;
+    }
+    
+    .h1-name h1,
+     .h1-name span{
+        font-family: "Patrick hand", sans-serif;
+        font-size: 70px;
+        width: 100%;
+        font-weight: normal;
+        margin: 0;
+        
+    }
+
+    .h1-name span {
+        color: #44CECE;
+    }
+    
+    .h1-name h1,
+    .h1-name span {
+        font-family: "Patrick hand", sans-serif;
+        font-size: 70px;
+        width: 100%;
+        font-weight: normal;
+        margin: 0;
+    }
+
+    .h1-name span {
+        color: #44CECE;
+    }
+    
+    .h1-name h1,
+    .h1-name span {
+        font-family: "Patrick hand", sans-serif;
+        font-size: 70px;
+        width: 100%;
+        font-weight: normal;
+        margin: 0;
+    }
+
+    .hero {
+        display: flex; /* Activa el diseño en fila */
+        justify-content: center; /* Centra los elementos */
+        align-items: center; /* Centra verticalmente */
+        column-gap: 200px;
+        width: 100%;
+    }
+
+    .leyend {
+        font-family: "Patrick hand", regular;
+        margin: 0;
+        font-size: 15px;
+        font-weight: normal;
+        
+    }
+
+    .img-container {
+        position: relative; /* Hace posible posicionar el botón sin afectar a la imagen */
+        display: flex;
+        flex-direction: column; /* Alinea la imagen y el botón en columna */
+        align-items: center; /* Centra la imagen y el botón */
+    }
+
+    .img {
+        width: 300px; /* Ajusta según el tamaño deseado */
+        height: 300px; /* Debe ser igual al ancho */
+        border-radius: 50%; /* Hace que el contenedor sea circular */
+        overflow: hidden; /* Oculta las partes sobrantes de la imagen */
+        display: flex;
+        justify-content: center;
+        align-items: center; /* Centra la imagen dentro del contenedor */
+    }
+
+    img {
+        width: 100%;
+        border-radius: 100%;
+    }
+
+    .cv-btn {
+        position: absolute;
+        top: 350px; /* Coloca el botón justo debajo de la imagen */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .cv-btn button {
+        width: 150px;
+        height: 50px;
+        border-radius: 40px;
+        background-color: #e2e1e1;
+        border: none;
+        cursor: pointer;
+        font-family: "patrick hand", sans-serif;
+        font-size: 22px;
+    }
+    
+    
+    .cv-btn button:hover{
+        color:#8a8484;
+        box-shadow: 0px 0px 10px #2799b2a6;
+        transition: 0.12s linear;
+    }
+
+    
+    .leyend h2 {
+        margin: 0px ;
+        margin-top: 0px;
+        color: #0000008e;
+        background-color: #44cece4f;
+        display: inline-block;
+    }
+    
+
+</style>
+
+
+
+
+
+

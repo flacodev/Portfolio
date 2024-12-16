@@ -1,5 +1,6 @@
 ---
 const title="navegador de la web"
+
 import menuIcon from '../assets/menuIcon.svg';
 
 ---
@@ -9,14 +10,14 @@ import menuIcon from '../assets/menuIcon.svg';
 <nav class="navbar">
 
 	<ul class="indice">    <!-- falta hacer el redireccionamiento bien de los href, ademas faltaria un span para poder poner luego algo en el naavbar responsive mobile-->
-		<li><a href="http://localhost:4321/" aria-label="enlace al incio" id="link1">&lt; /&gt; </a></li>
-		<li><a href="./proyectos.astro" >Proyectos</a></li>
-		<li><a href="./aboutSection" >About me</a></li>
-		<li><a href="#" >Skills</a></li>
-		<li><a href="#" >Contacto</a></li>
+		<li><a href="#home-section" aria-label="enlace al incio" id="link1">&lt; /&gt; </a></li>
+		<li><a href="#project-section" >Proyectos</a></li>
+		<li><a href="#about-section" >About me</a></li>
+		<li><a href="#skill-section" >Skills</a></li>
+		<li><a href="#contact-section" >Contacto</a></li>
 	</ul>
         <div class="responsive-container-div">
-            <a href="http://localhost:4321/" id="inicio-responsive">Agustin</a>
+            <a href="#home-section" id="inicio-responsive">Agustin</a>
             <button class="menu-icon" id="btn">
                 <img src={menuIcon.src} alt="Menu">
             </button>
