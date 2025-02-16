@@ -1,7 +1,7 @@
 ---
 const title="Home page"
-import imgPrincipal from '../assets/imgPrincipal.jpg';
- 
+
+import foto from '/public/imgprincipal.jpg';
 ---
 
 <section id="home-section">
@@ -18,7 +18,7 @@ import imgPrincipal from '../assets/imgPrincipal.jpg';
         </div>
         <div class="img-container">
             <div class="img">
-                <img src={imgPrincipal.src} alt="Agustin Sanchez">
+                <img src={foto.src} alt="Agustin Sanchez">
             </div>
             <div class="cv-btn">
                 <button>Resume</button>    
@@ -142,7 +142,7 @@ import imgPrincipal from '../assets/imgPrincipal.jpg';
     
     
     .cv-btn button:hover{
-        color:#8a8484;
+        color:#585656;
         box-shadow: 0px 0px 10px #2799b2a6;
         transition: 0.12s linear;
     }
