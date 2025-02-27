@@ -2,6 +2,9 @@
 const title="Home page"
 
 import foto from '/public/imgprincipal.jpg';
+import logoGit from '/public/github.png';
+import logoLink from '/public/linkedin.png';
+import logoInsta from '/public/instagram.png';
 ---
 
 <section id="home-section">
@@ -14,6 +17,13 @@ import foto from '/public/imgprincipal.jpg';
             </h1>
             <div class="leyend">
                 <h2>Diseñando soluciones.</h2>
+            </div>
+            <div class="social-container">
+                <ul>
+                   <li><a href="https://github.com/flacodev"><img src={logoGit.src} alt="github"></a></li>
+                   <li><a href="https://www.linkedin.com/in/agustin-sanchez-565592237/"><img src={logoLink.src} alt="linkedin"></a></li>
+                   <li><a href="https://www.instagram.com/agustin_sanchez5/"><img src={logoInsta.src} alt="instagram"></a></li> 
+                </ul>
             </div>
         </div>
         <div class="img-container">
@@ -93,7 +103,7 @@ import foto from '/public/imgprincipal.jpg';
 
     .leyend {
         font-family: "Patrick hand", regular;
-        margin: 0;
+        margin: 1rem auto;
         font-size: 15px;
         font-weight: normal;
         
@@ -155,6 +165,32 @@ import foto from '/public/imgprincipal.jpg';
         background-color: #44cece4f;
         display: inline-block;
     }
+
+    .social-container {
+        width: 150px;
+        display: flex;
+        justify-content: space-between;
+        
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 1rem auto;
+    }
+    li {
+        width: 100%;
+        height: 100%;
+        margin: 0 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+   
     
 
 </style>
