@@ -20,12 +20,13 @@ import logoInsta from '/public/instagram.png';
             </div>
             <div class="social-container">
                 <ul>
-                   <li><a href="https://github.com/flacodev"><img src={logoGit.src} alt="github"></a></li>
-                   <li><a href="https://www.linkedin.com/in/agustin-sanchez-565592237/"><img src={logoLink.src} alt="linkedin"></a></li>
-                   <li><a href="https://www.instagram.com/agustin_sanchez5/"><img src={logoInsta.src} alt="instagram"></a></li> 
+                   <li><a href="https://github.com/flacodev"><img src={logoGit.src} alt="github de agustin"></a></li>
+                   <li><a href="https://www.linkedin.com/in/agustin-sanchez-565592237/"><img src={logoLink.src} alt="linkedin de agustin"></a></li>
+                   <li><a href="https://www.instagram.com/agustin_sanchez5/"><img src={logoInsta.src} alt="instagram de agustin"></a></li> 
                 </ul>
             </div>
         </div>
+    
         <div class="img-container">
             <div class="img">
                 <img src={foto.src} alt="Agustin Sanchez">
@@ -34,7 +35,11 @@ import logoInsta from '/public/instagram.png';
                 <button>Resume</button>    
             </div>
         </div>
+        <div class="cv-btn-responsive">
+            <button>Resume</button>
+        </div>
     </div>
+    
 </section>
     
 
@@ -156,6 +161,9 @@ import logoInsta from '/public/instagram.png';
         box-shadow: 0px 0px 10px #2799b2a6;
         transition: 0.12s linear;
     }
+    .cv-btn-responsive{
+        display: none;
+    }
 
     
     .leyend h2 {
@@ -190,8 +198,118 @@ import logoInsta from '/public/instagram.png';
         justify-content: center;
         align-items: center;
     }
-   
     
+    .cv-btn-responsive{
+        display: none;
+    }
+
+    
+   
+    @media only screen and (max-width: 860px){
+        .hero {
+        display: flex;
+        flex-direction: column; /* Asegura que los elementos se coloquen en columna */
+        display: flex;
+        margin: 0;
+        padding: 0; 
+         
+    }
+
+    .img-container {
+        width: 100%;
+        height: auto;
+        display: flex;
+        margin-bottom: 10px;
+        padding: 0; 
+        order: -1; /* Esto asegura que la imagen esté encima de los demás elementos, pero bajo el navbar */
+    }
+
+    .img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .h1-name h1,
+    .h1-name span {
+        font-family: "Patrick hand", sans-serif;
+        font-size: 40px;
+        width: 100%;
+        font-weight: normal;
+        margin: 0;
+    }
+
+    .leyend {
+        font-family: "Patrick hand", sans-serif;
+        margin: 1rem auto;
+        font-size: 12px;
+        font-weight: normal;
+    }
+
+    .social-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    li {
+        width: 40px;
+        height: 40px;
+        margin: 0 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cv-btn {
+        display: none;
+    }
+
+    .cv-btn-responsive {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .cv-btn-responsive button {
+        width: 150px;
+        height: 50px;
+        border-radius: 40px;
+        background-color: #e2e1e1;
+        border: none;
+        cursor: pointer;
+        font-family: "Patrick hand", sans-serif;
+        font-size: 22px;
+    }
+    .cv-btn-responsive button:hover{
+        color:#585656;
+        box-shadow: 0px 0px 10px #2799b2a6;
+        transition: 0.12s linear;
+        }
+}
+    @media only screen and (max-width: 1080px){
+        .h1-name h1,
+        .h1-name span {
+            font-family: "Patrick hand", sans-serif;
+            font-size: 45px;
+            width: 100%;
+            font-weight: normal;
+            margin: 0;
+        }
+        .leyend {
+        font-family: "Patrick hand", sans-serif;
+        margin: 1rem auto;
+        font-size: 11px;
+        font-weight: normal;
+        }
+        .cv-btn button:hover{
+        color:#585656;
+        box-shadow: 0px 0px 10px #2799b2a6;
+        transition: 0.12s linear;
+        }
+    }
 
 </style>
 
